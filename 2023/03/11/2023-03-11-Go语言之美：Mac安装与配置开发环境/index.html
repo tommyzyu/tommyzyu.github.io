@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <link rel="shortcut icon" href="/images/avatar.png" type="image/x-icon" />
+    <title>
+         
+        阿健博文
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/css/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/css/solid.min.css">
+
+     
+    
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXXXX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XXXXXXXXXXXX');
+        </script>
+    
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <div class="body-container">
+        <div class="header-wrapper"><header>
+    <div class="header-container">
+        <div class="header-menu-list">
+            <ul>
+            
+                <li>
+                    <a href="/">主页</a>
+                </li>
+            
+            </ul>
+        </div>
+    </div>
+</header>
+</div>
+        <div class="main-wrapper"><main>
+    <div class="main-container">
+        <div class="post-details">
+            
+            <div class="post-title">
+                <h1></h1>
+            </div>
+            <div class="post-meta">
+                <i class="fa-solid fa-clock"></i>&nbsp;<span class="post-date">2023/03/11</span>
+            </div>
+            
+            <div class="post-content">
+                <blockquote>
+<p>工欲善其事，必先利其器</p>
+</blockquote>
+<p>很多人对这句话很熟悉，但是又有多少人做到呢? 在学习编程中最主要的是开工前的准备，工作中我们写一段代码时首先需要思考它要满足那些需求，业务逻辑应该如何走，等这些都想好了才开始写代码，这样写出来的代码不仅符合需求而且思路清晰、代码也简洁。</p>
+<p>同样，学习一门新的语言也一样，我们首先要做的是安装与配置它所需要的开发环境，如果这不没有走好，那么后面写出来的代码很可能无法运行，给人带来挫折感。</p>
+<p>我的电脑是Mac笔记本，所以本教程面向的是Mac用户，虽然面向的是Mac用户，但是其他环境配置起来也相处不大，特别是Linux，其几乎可以原封不动的搬运过去，唯独Windows平台在配置环境方面稍微复杂一点，但是善于用Google也是很容易解决问题的。</p>
+<ol>
+<li><p>下载Go安装包，打开Google进入搜索<code>golang</code>进入golang安装包的官网，进入后点击Download，选择系统对应的安装包，在这里由于我的Mac比较老只能选择Intel的x86。</p>
+<p><img src="https://s2.loli.net/2023/03/11/O28cftzV1SXQjEb.png" alt="WechatIMG26.png"></p>
+</li>
+<li><p>安装文件：文件下载完成后进入Download文件，点击Go安装包，Go的安装还是比较容易，一直点击下一步即可，如下图。</p>
+<p><img src="https://s2.loli.net/2023/03/11/Wor8JItRzPT6qgd.png" alt="WX20230311-091203@2x.png"></p>
+</li>
+</ol>
+<p>​	Go安装包默认是安装在<code>/usr/local/go</code>文件中的，使用<code>cd</code>命令可以进入相应的文件内。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ <span class="hljs-built_in">cd</span> /usr/local/go<br></code></pre></td></tr></table></figure>
+
+<p>如何查看安装的版本？进入终端后，输入版本号查询命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ go version //表示查询命令<br>go version go1.20.2 darwin/amd64 //表示查询成功<br></code></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>配置环境变量：在Mac中需要配置一个PATH值，打开<code>~/.bash_profile</code>在文件的尾部加入以下内容</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">export PATH=$PATH:/usr/local/go/bin<br></code></pre></td></tr></table></figure>
+
+<p>加入成功后输入<code>!WQ</code>保持内容，接着刷新<code>bash_profile</code>配置文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ <span class="hljs-built_in">source</span>  ~/.bash_profile<br></code></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>配置代理：基于大局域网的操蛋网络环境在配置完Go的变量后我们还需要做一步最重要的工作-配置代理工具，代理配置起来并不复杂只需要一条命令即可</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ go <span class="hljs-built_in">env</span> -w GOPROXY=https://goproxy.cn,https://goproxy.io,direct<br></code></pre></td></tr></table></figure>
+
+<p>环境配置完后可以方便下载Golang的各种包。</p>
+<ol start="5">
+<li><p>开发环境配置：Go的开发工具很多，常见的有vscode与Goland，它是大JB专门为Go开发的定制IDE，Goland有30天的免费体验时间。体验完成后用户可选择订阅模式付费，当然，也有白嫖的机会，大JB家对开源十分友好，如果你在GitHub上有开源的作品可以申请一年的免费IDE。</p>
+<p><img src="https://s2.loli.net/2023/03/11/SuKtwvoCUGsm1Pz.png" alt="jb.png"></p>
+</li>
+</ol>
+<p>在让go项目运行起来之前，我们需要了解一下go项目的基础文件架构，go是由src、bin、pkg三部分组成</p>
+<p><img src="https://s2.loli.net/2023/03/11/4f6szbPoSkX52Kl.png" alt="nt.png"></p>
+<p>src：用来存放项目源文件的地方。</p>
+<p>pkg：专门存放编译后的包文件。</p>
+<p>bin：专门用来存放编译后的可执行文件。</p>
+<p>了解了go项目的基本文件结构后还需要配置IDE编辑器，在IDE中主要配置三项<code>GOROOT</code>、<code>GOPATH</code>、<code>Add Configuration</code>；</p>
+<p>GOROOT：表示配置go的环境，该环境系统可以自动识别。如果没有自动识别，点击后选择<code>/usr/local/go</code>，没错这玩意就是刚才的安装环境</p>
+<p><img src="https://s2.loli.net/2023/03/11/LTxRoc2fbMSX5Ek.png" alt="goroot.png"></p>
+<p>GOPATH：表示项目的路径，里面有两种一种事<code>Global GOPATH</code>与<code>Project GOPATH</code>。<code>Global GOPATH</code>表示全局项目配置，可以将第三方的包直接放到这个下面，而<code>Project GOPATH</code>则表示你新建的项目位置。</p>
+<p>Add Configuration：表示配置编译环境，用来配置项目包以及项目编译后文件的存放地址</p>
+<p><img src="https://s2.loli.net/2023/03/11/bBXWatVZpAC49fE.png" alt="bianyi.png"></p>
+<p>名称：可以默认也可以自定义，它代表编译配置的名字。</p>
+<p>运行种类：有文件、软件包、目录三种，一般使用目录即可。</p>
+<p>目录：它根据运行种类改变，如果选，择目录则需要配置项目代码所在的目录；如果，选择软件包，则需要具体到软件包名称细节。</p>
+<p>输出目录：它表示则项目编译后的文件存放地<code>bin</code>即可。</p>
+<p>工作目录：默认的项目代码所在的目录。</p>
+<p>以上配置就是新手开发go项目的必要步骤，当流程都走完后，写入代码，并点击goland的<code>RUN</code>键，可以编译项目，在<code>bin</code>目录中可生成可执行文件</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">package</span> main<br><br><span class="hljs-keyword">import</span> <span class="hljs-string">&quot;fmt&quot;</span><br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;<br>	fmt.Println(<span class="hljs-string">&quot;Hello Golang&quot;</span>)<br>	fmt.Println(<span class="hljs-string">&quot;I love Go&quot;</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="https://utteranc.es/client.js"
+    repo="owner/repo"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+</script>
+
+  
+
+</div>
+        <div class="footer-wrapper"><footer>
+    <div class="footer-container">
+        <div class="footer-meta">
+            
+                <div class="footer-meta-copyright">
+                    &copy; 2023 zj.
+                </div>
+            
+            
+                <div class="footer-meta-licenese">
+                    Licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA 4.0</a>
+                </div>
+            
+            
+                <div class="footer-meta-rss">
+                    <a href="/atom.xml"><i class="fa-solid fa-rss"></i></a>
+                </div>
+            
+        </div>
+    </div>
+</footer>
+</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <link rel="shortcut icon" href="/images/avatar.png" type="image/x-icon" />
+    <title>
+        
+            新手如何安装Hexo |
+         
+        阿健博文
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/css/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/css/solid.min.css">
+
+     
+    
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXXXX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XXXXXXXXXXXX');
+        </script>
+    
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <div class="body-container">
+        <div class="header-wrapper"><header>
+    <div class="header-container">
+        <div class="header-menu-list">
+            <ul>
+            
+                <li>
+                    <a href="/">主页</a>
+                </li>
+            
+            </ul>
+        </div>
+    </div>
+</header>
+</div>
+        <div class="main-wrapper"><main>
+    <div class="main-container">
+        <div class="post-details">
+            
+            <div class="post-title">
+                <h1>新手如何安装Hexo</h1>
+            </div>
+            <div class="post-meta">
+                <i class="fa-solid fa-clock"></i>&nbsp;<span class="post-date">2023/03/01</span>
+            </div>
+            
+            <div class="post-content">
+                <p>Hexo是一款著名的静态博客系统，准确的来说它只是nodejs里面的一个包而已，它和Github配合起来可以快速的搭建一个免费的博客，用户只需要花钱购买自义定域名即可，在几款静态博客中Hexo是使用量最大，搭建最容易的博客，用起来最省心的博客。</p>
+<p>搭建Hexo需要的环境：Nodejs、npm、GitHub、Git即可。</p>
+<h5 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h5><p>首先是安装git，heox搭建好后我们需要将它部署到GitHub系统上，所以git是必不可少的工具，我本人是用的vps作为内容托系统，这样方便我外出的时候也能顺利的发布博文，本系统是建立Debian上，首先执行命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get update //升级系统<br>sudo apt-get install git-core //安装git<br></code></pre></td></tr></table></figure>
+
+<p>git安装完成后可通过<code>git -versio</code>查看安装是否成功，当安装成功后就进入配置git参数环节，执行下面命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">git config --global user.name <span class="hljs-string">&quot;gitname&quot;</span> //输入GitHub上的用户名<br>git config --global user.email sammy@example.com //输入GitHub的邮箱<br>git config --list //表示查看git的全局配置<br></code></pre></td></tr></table></figure>
+
+<p>参考：<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1350957">https://cloud.tencent.com/developer/article/1350957</a></p>
+<h5 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h5><p>hexo是nodejs的一个包，所以安装nodejs也是必不可少的，推荐安装最新的nodejs，在Debian系统中执行下面命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get install nodejs //安装nodejs<br>node -v //查询nodejs的版本<br></code></pre></td></tr></table></figure>
+
+<p>nodejs安装成功后我们还需要安装包管理工具npm，进入bash终端执行下面命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get install npm //安装npm包<br>npm -v //查看npm版本<br></code></pre></td></tr></table></figure>
+
+
+
+<h5 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h5><p>在以上工作都准备完成后，将进入Hexo正式安装的环节，进入bash终端执行下面命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install -g hexo-cli //安装hexo命令端<br></code></pre></td></tr></table></figure>
+
+<p><strong>使用Hexo</strong></p>
+<p>安装完成后依次执行如下命令即可运行Hexo系统</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo init myblog //初始化项目<br>hexo clean //清空已经存在的hexo网站文件<br>hexo generate(可简写g) //依据网页文件和新的css样式生成新的网站文件<br>hexo server(可简写为s) //启动本地服务器，可以在localhost：4000查看网站修改效果<br>hexo new <span class="hljs-string">&quot;hello world&quot;</span> //创建一篇文章，根目录的<span class="hljs-built_in">source</span>里面的md文件可以修改文章内容<br><br>npm install hexo-deployer-git --save     //安装上传到仓库的插件，才能进行发布文章的命令<br>hexo g --d //发布文章 一键部署并推送到gitee仓库上<br></code></pre></td></tr></table></figure>
+
+<p><strong>升级node</strong></p>
+<p>在安装hexo的时候如果遇到提示nodejs版本过低我们可以执行以前命令来解决</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install -g n <br>n stable<br>node -v //查看升级后的版本<br></code></pre></td></tr></table></figure>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="https://utteranc.es/client.js"
+    repo="owner/repo"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+</script>
+
+  
+
+</div>
+        <div class="footer-wrapper"><footer>
+    <div class="footer-container">
+        <div class="footer-meta">
+            
+                <div class="footer-meta-copyright">
+                    &copy; 2023 zj.
+                </div>
+            
+            
+                <div class="footer-meta-licenese">
+                    Licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA 4.0</a>
+                </div>
+            
+            
+                <div class="footer-meta-rss">
+                    <a href="/atom.xml"><i class="fa-solid fa-rss"></i></a>
+                </div>
+            
+        </div>
+    </div>
+</footer>
+</div>
+    </div>
+</body>
+</html>
